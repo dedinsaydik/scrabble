@@ -38,16 +38,14 @@ def main():
     player_scores = [0, 0]
     count = 0
     while player_scores[0] <= 100 and player_scores[1] <= 100:
+        count = count%2
         print('Игрок', count + 1)
         letter = get_random_letter()
         word = get_word_with_letter(letter)
         scores = calculate_score(word)
         player_scores[count] += scores
         print(player_scores)
-        if count == 1:
-            count = 0
-        else:
-            count += 1
+        count += 1
     if player_scores[0] >= player_scores[1]:
         print('Игрок 1 - победитель!')
     elif player_scores[1] >= player_scores[0]:
